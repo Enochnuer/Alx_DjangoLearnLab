@@ -16,11 +16,13 @@ class BookListView(generics.ListAPIView):
     filterset_fields = ['title', 'author__name', 'publication_year']
     search_fields = ['title', 'author__name']
     ordering_fields = ['title', 'publication_year']
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
 # DetailView to retrieve a single book by ID
 class BookDetailView(generics.RetrieveAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
 # CreateView to add a new book
 class BookCreateView(generics.CreateAPIView):
