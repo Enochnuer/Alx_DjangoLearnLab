@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d6rn#c(!dr99rr%#ct%^vac&rzs9q^mb-0qnl9&4q2p%86#2lr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost"]
 
 
 # Application definition
@@ -88,6 +88,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'PORT': '5432'
     }
 }
 
